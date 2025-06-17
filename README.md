@@ -1,88 +1,94 @@
-# 🚀 Line Follower Robot Project  
-
-**Duration**: 60 minutes  
-
-## 🛠 Equipment Needed
-- Robot cars
-- KY-033 sensors (TCRT5000)
-- Black electrical tape
-- Laptops
-- Jumper wires
-- Breadboards (if needed)
-- Pre-made test tracks
+# 🤖 Code-Easy Robotics Lesson 2: Smart Line Following with Obstacle Detection
 
 ---
 
-## 📝 Lesson Structure
+## 📝 Lesson Overview
 
-| Part | Topic | Duration |
-|------|-------|----------|
-| 1 | Warm-up Programming Challenge | 15 minutes |
-| 2 | Understanding the KY-033 Sensor | 10 minutes |
-| 3 | Three Practical Activities | 30 minutes |
-| 4 | Wrap-up and Next Steps | 5 minutes |
+- **Duration:** 60 minutes  
+- **Age Group:** 7–16 years  
+- **Topic:** Line following with ultrasonic sensor obstacle detection and avoidance  
+- **Equipment:** Pico Pi robots, ultrasonic sensors, black tape lines, small obstacles  
+
+---
+## 🎯 Learning Objectives
+
+By the end of this lesson, students will be able to:
+
+- Understand how ultrasonic sensors measure distance  
+- Program a robot to follow a line **and** detect obstacles  
+- Implement basic decision-making in robotics code  
+- Combine multiple sensors for smarter robot behavior  
 
 ---
 
-## Part 1: Programming Warm-up (15 minutes)
-**Objective**: Get students thinking about conditional logic for sensor-based decisions
+## 🧩 Lesson Structure
 
-### Activity: "Traffic Light Controller"
-- **Scenario**:  
-  "Your robot approaches different colored markers on the ground"
-  
-- **Instructions**:
-  - Students will write a simple program that simulates a robot responding to different colored signals
-  - Code responses for different inputs
-  - Prepares thinking for line-following logic
+### 1. Live Warm-Up Activity (15 minutes)
 
----
+#### "Human Ultrasonic Challenge" (10 minutes)
 
-## Part 2: KY-033 Sensor Deep Dive (10 minutes)
-**Objective**: Understand how the TCRT5000 sensor detects lines
+**Setup:** Create a simple obstacle course with chairs/boxes around the room.
 
-### Key Concepts:
-- Physical components (IR LED and phototransistor)
-- Reflection vs absorption principles
-- Digital vs analog output modes
-- Wiring to the Pico
-- Calibration considerations
+**Activity:**
 
-### Demonstration:
-- Live demonstration with sensor over black and white surfaces
-- Show voltage readings on multimeter
-- Connect to Pico and show digital readings
+- Students work in pairs – one is the "robot", the other is the "programmer"  
+- The "robot" closes their eyes and navigates using only sound cues  
+- The "programmer" uses clicking sounds (like echolocation) to guide them  
+- Switch roles after 3 minutes  
+
+#### Discussion Questions (5 minutes)
+
+- "How did you know when something was close without seeing it?"  
+- "What happened when you heard the clicks echo back quickly?"  
+- "How is this similar to how bats or dolphins navigate?"  
+
+**💬 Connection to Lesson:**  
+> "Today we're teaching our robots to 'see' with sound, just like you did!"
 
 ---
 
-## Part 3: Three Hands-on Activities (30 minutes)
+### 2. Main Teaching Content (35 minutes)
 
-### Activity 1: Basic Sensor Reading (8 minutes)
-- Test the sensor and understand its output
-- Example code:
-```python
-from machine import Pin
-sensor = Pin(16, Pin.IN)
-while True:
-    print(sensor.value())
+#### Part A: Understanding Ultrasonic Sensors (8 minutes)
 
-## 📋 Lesson Plan  
-| Part | Activity          | Duration |
-|------|-------------------|----------|
-| 1    | Warm-up Challenge | 15 min   |
-| 2    | Sensor Demo       | 10 min   |
+**Demonstration:**
 
----
+- Show the ultrasonic sensor on the robot  
+- Explain: *"It sends out sound waves we can't hear and measures how long they take to bounce back"*  
+- Live demo: Move your hand closer/further from sensor while showing distance readings  
 
-### 🔧 Equipment Needed  
-- KY-033 Sensors  
-- Raspberry Pi Pico  
-- Black tape  
+**Key Concepts:**
+
+- *Ultrasonic = sound waves above human hearing*  
+- *Closer objects = shorter time = smaller distance reading*  
+- *Further objects = longer time = larger distance reading*  
 
 ---
 
-## 💻 Code Example  
-```python
-from machine import Pin  
-sensor = Pin(16, Pin.IN)  
-print(sensor.value())  
+#### Part B: Basic Line Following Review (7 minutes)
+
+**Quick Recap:**
+
+- *"Who remembers what we learned about line following last week?"*  
+- Demonstrate: Robot following a simple straight line  
+- Review: Light sensors detect **dark line** vs. **light floor**  
+---
+# Tasks: Line-Following Robot with Advanced Obstacle Handling
+
+This project enhances a basic line-following robot with **obstacle detection**, **avoidance**, and **path reversal** capabilities. Built as an extension of Lesson 1's line follower, it demonstrates adaptive robotics using sensors and logic.
+
+## Features
+
+### 1. Obstacle Detection & Auto-Stop  
+- **Behavior:** Stops immediately when an obstacle is detected on its path.  
+- **Use Case:** Prevents collisions during line-following tasks.  
+
+### 2. Dynamic Obstacle Avoidance  
+- **Behavior:** Detects obstacles, navigates around them, and resumes line tracking.  
+- **Use Case:** Maintains mission continuity in cluttered environments.  
+
+### 3. Line Detection & Reverse Navigation  
+- **Behavior:** Recognizes dead-ends/intersections and reverses direction autonomously.  
+- **Use Case:** Enables closed-loop circuits without manual intervention.  
+
+---
